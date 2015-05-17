@@ -1,0 +1,17 @@
+#! /usr/bin/python
+
+import unittest
+import logging
+import tornado.testing
+logging.disable(logging.CRITICAL)
+
+TESTS = [
+    'client.tests.client',
+]
+
+
+def all():
+    return unittest.defaultTestLoader.loadTestsFromNames(TESTS)
+
+if __name__ == '__main__':
+    tornado.testing.main(verbosity=2, failfast=False)
